@@ -1,4 +1,4 @@
-@performers.map |performer| do
+@performers.map do |performer|
   {
     name: performer.name,
     email: performer.email,
@@ -11,6 +11,6 @@
     bio: performer.bio,
     instagram_handle: performer.instagram_handle,
     twitter_handle: performer.twitter_handle,
-    performance_type: performer.performance_type
-  }  
+    performance_type: performer.performance_type,
+  }
 end

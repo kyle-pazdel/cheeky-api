@@ -5,12 +5,12 @@ class PerformersController < ApplicationController
   def index
     @performers = Performer.all
 
-    render json: @performers
+    render template: "performers/index"
   end
 
   # GET /performers/1
   def show
-    render json: @performer
+    render template: "performers/show"
   end
 
   # POST /performers
@@ -39,13 +39,14 @@ class PerformersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_performer
-      @performer = Performer.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def performer_params
-      params.fetch(:performer, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_performer
+    @performer = Performer.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def performer_params
+    params.fetch(:performer, {})
+  end
 end

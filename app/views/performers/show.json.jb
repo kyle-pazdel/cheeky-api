@@ -1,0 +1,14 @@
+{
+  name: @performer.name,
+  email: @performer.email,
+  phone_number: @performer.phone_number,
+  shortest_gig: @performer.shortest_gig,
+  longest_gig: @performer.longest_gig,
+  city: @performer.city,
+  state: @performer.state,
+  rate: @performer.rate,
+  bio: @performer.bio,
+  instagram_handle: @performer.instagram_handle,
+  twitter_handle: @performer.twitter_handle,
+  performance_type: @performer.performance_type,
+}

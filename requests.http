@@ -43,3 +43,7 @@ DELETE http://localhost:3000/users/5.json
 ### Performers index request
 
 GET http://localhost:3000/performers.json
+
+### Performers show request
+
+GET http://localhost:3000/performers/1.json
