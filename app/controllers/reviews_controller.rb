@@ -26,8 +26,12 @@ class ReviewsController < ApplicationController
 
   # PATCH/PUT /reviews/1
   def update
-    if @review.update(review_params)
-      render json: @review
+    @review.booking_id = params[:booking_id] || @reveiw.booking_id
+    @review.rating = params[:rating] || @reveiw.rating
+    @review.comment = params[:comment] || @reveiw.comment
+
+    if @review.save
+      render template: "reviews/show"
     else
       render json: @review.errors, status: :unprocessable_entity
     end

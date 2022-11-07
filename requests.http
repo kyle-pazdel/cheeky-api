@@ -89,10 +89,21 @@ DELETE http://localhost:3000/bookings/3.json
 
 
 
-### Reveiws index request
+### Reviews index request
 
 GET http://localhost:3000/reviews.json
 
-### Reveiws show request
+### Reviews show request
 
 GET http://localhost:3000/reviews/1.json
+
+### Reviews create action
+
+POST http://localhost:3000/reviews.json
+Content-Type: application/json
+
+{
+  "booking_id": "2",
+  "rating": "5",
+  "comment": "This was fantastic!!!"
+}
