@@ -1,3 +1,17 @@
 ### Users show request
 
 GET http://localhost:3000/users/1.json
+
+### Users create action
+
+POST http://localhost:3000/users.json
+Content-Type: application/json
+
+{
+  "first_name": "RuPaul",
+  "last_name": "Charles",
+  "phone_number": "555-444-5555",
+  "email": "ru@test.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
