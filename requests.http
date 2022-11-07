@@ -107,3 +107,12 @@ Content-Type: application/json
   "rating": "5",
   "comment": "This was fantastic!!!"
 }
+
+### Reviews update action
+
+PATCH http://localhost:3000/reviews/2.json
+Content-Type: application/json
+
+{
+  "rating": "4.75"
+}

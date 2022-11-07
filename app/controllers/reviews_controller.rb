@@ -26,9 +26,9 @@ class ReviewsController < ApplicationController
 
   # PATCH/PUT /reviews/1
   def update
-    @review.booking_id = params[:booking_id] || @reveiw.booking_id
-    @review.rating = params[:rating] || @reveiw.rating
-    @review.comment = params[:comment] || @reveiw.comment
+    @review.booking_id = params[:booking_id] || @review.booking_id
+    @review.rating = params[:rating] || @review.rating
+    @review.comment = params[:comment] || @review.comment
 
     if @review.save
       render template: "reviews/show"
