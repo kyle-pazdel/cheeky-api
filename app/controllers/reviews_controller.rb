@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/1
   def show
-    render json: @review
+    render template: "reviews/show"
   end
 
   # POST /reviews
@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
 
     if @review.save
-      render json: @review, status: :created, location: @review
+      render template: "reviews/show"
     else
       render json: @review.errors, status: :unprocessable_entity
     end
@@ -47,6 +47,6 @@ class ReviewsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def review_params
-    params.fetch(:review, {})
+    params.permit(:booking_id, :rating, :comment)
   end
 end
