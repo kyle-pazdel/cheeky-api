@@ -1,0 +1,6 @@
+{
+  id: @review.id,
+  booking_id: @review.booking_id,
+  rating: @review.rating,
+  comment: @review.comment,
+}

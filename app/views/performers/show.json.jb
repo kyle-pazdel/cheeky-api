@@ -1,4 +1,5 @@
 {
+  id: @performer.id,
   name: @performer.name,
   email: @performer.email,
   phone_number: @performer.phone_number,
