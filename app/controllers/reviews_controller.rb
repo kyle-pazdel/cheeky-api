@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
   def index
     @reviews = Review.all
 
-    render template: "index/reviews"
+    render template: "reviews/index"
   end
 
   # GET /reviews/1

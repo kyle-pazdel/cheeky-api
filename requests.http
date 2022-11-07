@@ -84,5 +84,15 @@ Content-Type: application/json
   "event_type": "comedy show"
 }
 
-### Users delete action
+### Bookings delete action
 DELETE http://localhost:3000/bookings/3.json
+
+
+
+### Reveiws index request
+
+GET http://localhost:3000/reviews.json
+
+### Reveiws show request
+
+GET http://localhost:3000/reviews/1.json
