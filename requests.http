@@ -55,3 +55,7 @@ GET http://localhost:3000/performers/1.json
 ### Bookings index request
 
 GET http://localhost:3000/bookings.json
+
+### Bookings show request
+
+GET http://localhost:3000/bookings/1.json

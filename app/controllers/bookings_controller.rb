@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
 
   # GET /bookings/1
   def show
-    render json: @booking
+    render template: "bookings/show"
   end
 
   # POST /bookings

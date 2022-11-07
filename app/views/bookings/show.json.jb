@@ -1,0 +1,9 @@
+{
+  user_id: @booking.user_id,
+  performer_id: @booking.performer_id,
+  location: @booking.location,
+  event_type: @booking.event_type,
+  start_time: @booking.start_time,
+  end_time: @booking.end_time,
+  total: @booking.total,
+}
