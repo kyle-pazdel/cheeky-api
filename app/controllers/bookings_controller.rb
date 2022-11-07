@@ -26,8 +26,16 @@ class BookingsController < ApplicationController
 
   # PATCH/PUT /bookings/1
   def update
-    if @booking.update(booking_params)
-      render json: @booking
+    @booking.user_id = params[:user_id] || @booking.user_id
+    @booking.performer_id = params[:performer_id] || @booking.performer_id
+    @booking.location = params[:location] || @booking.location
+    @booking.event_type = params[:event_type] || @booking.event_type
+    @booking.start_time = params[:start_time] || @booking.start_time
+    @booking.end_time = params[:end_time] || @booking.end_time
+    @booking.total = params[:total] || @booking.total
+
+    if @booking.save
+      render template: "bookings/show"
     else
       render json: @booking.errors, status: :unprocessable_entity
     end

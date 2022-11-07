@@ -1,4 +1,5 @@
 {
+  id: @booking.id,
   user_id: @booking.user_id,
   performer_id: @booking.performer_id,
   location: @booking.location,
