@@ -44,6 +44,7 @@ class BookingsController < ApplicationController
   # DELETE /bookings/1
   def destroy
     @booking.destroy
+    render json: { message: "Booking cancelled." }
   end
 
   private
