@@ -8,10 +8,10 @@ POST http://localhost:3000/users.json
 Content-Type: application/json
 
 {
-  "first_name": "RuPaul",
-  "last_name": "Charles",
-  "phone_number": "555-444-5555",
-  "email": "ru@test.com",
+  "first_name": "Test",
+  "last_name": "Test",
+  "phone_number": "5557775555",
+  "email": "ts@test.com",
   "password": "password",
   "password_confirmation": "password"
 }
@@ -26,3 +26,14 @@ Content-Type: application/json
   "last_name": "Visage",
   "email": "michelle@test.com"
 }
+###
+
+PATCH http://localhost:3000/users/3.json
+Content-Type: application/json
+
+{
+  "phone_number": "5554445555"
+}
+
+### Users delete action
+DELETE http://localhost:3000/users/5.json
