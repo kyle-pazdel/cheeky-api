@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
   def index
     @bookings = Booking.all
 
-    render json: @bookings
+    render template: "bookings/index"
   end
 
   # GET /bookings/1
@@ -39,13 +39,14 @@ class BookingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_booking
-      @booking = Booking.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def booking_params
-      params.fetch(:booking, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def booking_params
+    params.fetch(:booking, {})
+  end
 end
