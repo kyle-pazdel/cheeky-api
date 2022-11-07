@@ -116,3 +116,6 @@ Content-Type: application/json
 {
   "rating": "4.75"
 }
+
+### Reviews delete action
+DELETE http://localhost:3000/reviews/3.json
