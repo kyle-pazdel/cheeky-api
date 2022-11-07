@@ -37,3 +37,9 @@ Content-Type: application/json
 
 ### Users delete action
 DELETE http://localhost:3000/users/5.json
+
+
+
+### Performers index request
+
+GET http://localhost:3000/performers.json
