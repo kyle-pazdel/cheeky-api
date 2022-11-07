@@ -58,4 +58,19 @@ GET http://localhost:3000/bookings.json
 
 ### Bookings show request
 
-GET http://localhost:3000/bookings/1.json
+GET http://localhost:3000/bookings/2.json
+
+### Bookings create action
+
+POST http://localhost:3000/bookings.json
+Content-Type: application/json
+
+{
+  "user_id": "2",
+  "performer_id": "1",
+  "location": "2301 N Highland Ave, Los Angeles, CA 90068",
+  "event_type": "concert",
+  "start_time": "2022-12-23T20:00:00.000Z",
+  "end_time": "2022-12-24T00:00:00.000Z",
+  "total": "600"
+}
