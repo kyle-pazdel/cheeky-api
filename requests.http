@@ -61,10 +61,12 @@ GET http://localhost:3000/performers/1.json
 ### Bookings index request
 
 GET http://localhost:3000/bookings.json
+Authorization: Bearer {{jwt}}
 
 ### Bookings show request
 
-GET http://localhost:3000/bookings/2.json
+GET http://localhost:3000/bookings/1.json
+Authorization: Bearer {{jwt}}
 
 ### Bookings create action
 

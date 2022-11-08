@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     if @user.id == current_user.id
       render template: "users/show"
     else
-      render json: { message: "Please log in to view account details" }, status: :unauthorized
+      render json: { message: "Please log in to view account details." }, status: :unauthorized
     end
   end
 
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
         render json: @user.errors, status: :unprocessable_entity
       end
     else
-      render json: { message: "Please log in to update account details" }, status: :unauthorized
+      render json: { message: "Please log in to update account details." }, status: :unauthorized
     end
   end
 
