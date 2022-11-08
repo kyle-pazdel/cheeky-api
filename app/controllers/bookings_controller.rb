@@ -33,6 +33,7 @@ class BookingsController < ApplicationController
     if @booking.user.id == current_user.id
       @booking.user_id = params[:user_id] || @booking.user_id
       @booking.performer_id = params[:performer_id] || @booking.performer_id
+      @booking.event_name = params[:event_name] || @booking.event_name
       @booking.location = params[:location] || @booking.location
       @booking.event_type = params[:event_type] || @booking.event_type
       @booking.start_time = params[:start_time] || @booking.start_time
@@ -67,6 +68,6 @@ class BookingsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def booking_params
-    params.permit(:user_id, :performer_id, :location, :event_type, :start_time, :end_time, :total)
+    params.permit(:user_id, :performer_id, :location, :event_type, :start_time, :end_time, :total, :event_name)
   end
 end

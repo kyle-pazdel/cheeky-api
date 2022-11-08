@@ -1,5 +1,10 @@
 {
   id: @booking.id,
+  performer_name: @booking.performer.name,
+  performer_email: @booking.performer.email,
+  performer_rate: @booking.performer.rate,
+  performer_phone_number: @booking.performer.phone_number,
+  event_name: @booking.event_name,
   user_id: @booking.user_id,
   performer_id: @booking.performer_id,
   location: @booking.location,
