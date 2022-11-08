@@ -11,7 +11,11 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    render template: "users/show"
+    if @user.id == current_user.id
+      render template: "users/show"
+    else
+      render json: { message: "Please log in to view account details" }, status: :unauthorized
+    end
   end
 
   # POST /users
@@ -27,14 +31,18 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
-    @user.first_name = params[:first_name] || @user.first_name
-    @user.last_name = params[:last_name] || @user.last_name
-    @user.phone_number = params[:phone_number] || @user.phone_number
-    @user.email = params[:email] || @user.email
-    if @user.save
-      render template: "users/show"
+    if @user.id == current_user.id
+      @user.first_name = params[:first_name] || @user.first_name
+      @user.last_name = params[:last_name] || @user.last_name
+      @user.phone_number = params[:phone_number] || @user.phone_number
+      @user.email = params[:email] || @user.email
+      if @user.save
+        render template: "users/show"
+      else
+        render json: @user.errors, status: :unprocessable_entity
+      end
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render json: { message: "Please log in to update account details" }, status: :unauthorized
     end
   end
 

@@ -1,5 +1,5 @@
 
-jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2Njc5NTM2ODZ9.4ASsX5dwuDucGDjYA9reIRedaAJBlc60gJBJz7yvxIo
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2Njc5NTQyNTV9.Sy5_0ztYgfmGViuu30_Xreghw9P-7vTkMUL1OBD-hHE
 
 ### Sessions create
 POST http://localhost:3000/login.json
@@ -13,44 +13,36 @@ Content-Type: application/json
 ### Users show request
 
 GET http://localhost:3000/users/1.json
-# Authorization: Bearer {{jwt}}
+Authorization: Bearer {{jwt}}
 
 ### Users create action
 
 POST http://localhost:3000/users.json
-# Authorization: Bearer {{jwt}}
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
   "first_name": "Test",
   "last_name": "Test",
-  "phone_number": "5557775555",
-  "email": "ts@test.com",
+  "phone_number": "5558885555",
+  "email": "tst@test.com",
   "password": "password",
   "password_confirmation": "password"
 }
 
 ### Users update action
 
-PATCH http://localhost:3000/users/2.json
+PATCH http://localhost:3000/users/1.json
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "first_name": "Michelle",
-  "last_name": "Visage",
-  "email": "michelle@test.com"
-}
-###
-
-PATCH http://localhost:3000/users/3.json
-Content-Type: application/json
-
-{
-  "phone_number": "5554445555"
+  "phone_number": "5555555555"
 }
 
 ### Users delete action
 DELETE http://localhost:3000/users/5.json
+Authorization: Bearer {{jwt}}
 
 
 
