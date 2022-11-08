@@ -1,10 +1,24 @@
+
+jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2Njc5NTM2ODZ9.4ASsX5dwuDucGDjYA9reIRedaAJBlc60gJBJz7yvxIo
+
+### Sessions create
+POST http://localhost:3000/login.json
+Content-Type: application/json
+
+{
+  "email": "kyle@test.com",
+  "password": "password"
+}
+
 ### Users show request
 
 GET http://localhost:3000/users/1.json
+# Authorization: Bearer {{jwt}}
 
 ### Users create action
 
 POST http://localhost:3000/users.json
+# Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {

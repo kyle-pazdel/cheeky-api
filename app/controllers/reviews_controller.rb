@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: %i[ show update destroy ]
+  
 
   # GET /reviews
   def index
