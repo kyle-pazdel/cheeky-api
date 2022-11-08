@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
 
   # GET /bookings
   def index
-    @bookings = Booking.all.where(:id == current_user.id)
+    @bookings = Booking.where(user_id: current_user.id)
     render template: "bookings/index"
   end
 
