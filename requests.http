@@ -73,10 +73,11 @@ Authorization: Bearer {{jwt}}
 ### Bookings create action
 
 POST http://localhost:3000/bookings.json
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "user_id": "2",
+  "user_id": "1",
   "performer_id": "1",
   "location": "2301 N Highland Ave, Los Angeles, CA 90068",
   "event_type": "concert",
@@ -87,15 +88,17 @@ Content-Type: application/json
 
 ### Bookings update action
 
-PATCH http://localhost:3000/bookings/2.json
+PATCH http://localhost:3000/bookings/1.json
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "event_type": "comedy show"
+  "event_type": "birthday party"
 }
 
 ### Bookings delete action
-DELETE http://localhost:3000/bookings/3.json
+DELETE http://localhost:3000/bookings/4.json
+Authorization: Bearer {{jwt}}
 
 
 

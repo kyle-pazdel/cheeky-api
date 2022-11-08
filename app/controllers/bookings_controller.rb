@@ -30,25 +30,32 @@ class BookingsController < ApplicationController
 
   # PATCH/PUT /bookings/1
   def update
-    @booking.user_id = params[:user_id] || @booking.user_id
-    @booking.performer_id = params[:performer_id] || @booking.performer_id
-    @booking.location = params[:location] || @booking.location
-    @booking.event_type = params[:event_type] || @booking.event_type
-    @booking.start_time = params[:start_time] || @booking.start_time
-    @booking.end_time = params[:end_time] || @booking.end_time
-    @booking.total = params[:total] || @booking.total
-
-    if @booking.save
-      render template: "bookings/show"
+    if @booking.user.id == current_user.id
+      @booking.user_id = params[:user_id] || @booking.user_id
+      @booking.performer_id = params[:performer_id] || @booking.performer_id
+      @booking.location = params[:location] || @booking.location
+      @booking.event_type = params[:event_type] || @booking.event_type
+      @booking.start_time = params[:start_time] || @booking.start_time
+      @booking.end_time = params[:end_time] || @booking.end_time
+      @booking.total = params[:total] || @booking.total
+      if @booking.save
+        render template: "bookings/show"
+      else
+        render json: @booking.errors, status: :unprocessable_entity
+      end
     else
-      render json: @booking.errors, status: :unprocessable_entity
+      render json: { message: "Please log in to update booking details." }, status: :unauthorized
     end
   end
 
   # DELETE /bookings/1
   def destroy
-    @booking.destroy
-    render json: { message: "Booking cancelled." }
+    if @booking.user.id == current_user.id
+      @booking.destroy
+      render json: { message: "Booking cancelled." }
+    else
+      render json: { message: "Please log in to cancel booking." }, status: :unauthorized
+    end
   end
 
   private
