@@ -14,8 +14,8 @@ Content-Type: application/json
 
 ### Users show request
 
-GET http://localhost:3000/users/1.json
-Authorization: Bearer {{jwt}}
+GET http://localhost:3000/users/8.json
+# Authorization: Bearer {{jwt}}
 
 ### Users create action
 
