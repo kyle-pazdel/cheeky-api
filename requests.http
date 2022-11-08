@@ -1,13 +1,14 @@
 
 @jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2Njc5NTQyNTV9.Sy5_0ztYgfmGViuu30_Xreghw9P-7vTkMUL1OBD-hHE
 @ru_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2Njc5NTU3NDN9.JAp1q7vpn9OSX86VdUK8v46Gp-3fSZZO5olsyr3-cNY
+@michelle_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Njc5NTgwNTZ9.oEfl6peLGp27OYDA_2hmXlVA65aiHHPMlxrddR9PnxI
 
 ### Sessions create
 POST http://localhost:3000/login.json
 Content-Type: application/json
 
 {
-  "email": "ru@test.com",
+  "email": "michelle@test.com",
   "password": "password"
 }
 
@@ -113,22 +114,25 @@ GET http://localhost:3000/reviews/1.json
 ### Reviews create action
 
 POST http://localhost:3000/reviews.json
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
   "booking_id": "2",
-  "rating": "5",
-  "comment": "This was fantastic!!!"
+  "rating": "4",
+  "comment": "Sweet!"
 }
 
 ### Reviews update action
 
-PATCH http://localhost:3000/reviews/2.json
+PATCH http://localhost:3000/reviews/8.json
 Content-Type: application/json
+Authorization: Bearer {{jwt}}
 
 {
   "rating": "4.75"
 }
 
 ### Reviews delete action
-DELETE http://localhost:3000/reviews/3.json
+DELETE http://localhost:3000/reviews/9.json
+Authorization: Bearer {{michelle_jwt}}

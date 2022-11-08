@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: %i[ show update destroy ]
-  
+  before_action :authenticate_user, only: %i[create update destroy]
 
   # GET /reviews
   def index
@@ -17,9 +17,12 @@ class ReviewsController < ApplicationController
   # POST /reviews
   def create
     @review = Review.new(review_params)
-
     if @review.save
-      render template: "reviews/show"
+      if @review.booking.user.id == current_user.id
+        render template: "reviews/show"
+      else
+        render json: { message: "Unauthorized." }, status: :unauthorized
+      end
     else
       render json: @review.errors, status: :unprocessable_entity
     end
@@ -27,21 +30,28 @@ class ReviewsController < ApplicationController
 
   # PATCH/PUT /reviews/1
   def update
-    @review.booking_id = params[:booking_id] || @review.booking_id
-    @review.rating = params[:rating] || @review.rating
-    @review.comment = params[:comment] || @review.comment
-
-    if @review.save
-      render template: "reviews/show"
+    if @review.booking.user.id == current_user.id
+      @review.booking_id = params[:booking_id] || @review.booking_id
+      @review.rating = params[:rating] || @review.rating
+      @review.comment = params[:comment] || @review.comment
+      if @review.save
+        render template: "reviews/show"
+      else
+        render json: @review.errors, status: :unprocessable_entity
+      end
     else
-      render json: @review.errors, status: :unprocessable_entity
+      render json: { message: "Unauthorized." }, status: :unauthorized
     end
   end
 
   # DELETE /reviews/1
   def destroy
-    @review.destroy
-    render json: { message: "Review deleted." }
+    if @review.booking.user.id == current_user.id
+      @review.destroy
+      render json: { message: "Review deleted." }
+    else
+      render json: { message: "Unauthorized." }, status: :unauthorized
+    end
   end
 
   private
