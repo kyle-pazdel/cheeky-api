@@ -1,12 +1,13 @@
 
 @jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2Njc5NTQyNTV9.Sy5_0ztYgfmGViuu30_Xreghw9P-7vTkMUL1OBD-hHE
+@ru_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2Njc5NTU3NDN9.JAp1q7vpn9OSX86VdUK8v46Gp-3fSZZO5olsyr3-cNY
 
 ### Sessions create
 POST http://localhost:3000/login.json
 Content-Type: application/json
 
 {
-  "email": "kyle@test.com",
+  "email": "ru@test.com",
   "password": "password"
 }
 
@@ -65,8 +66,9 @@ Authorization: Bearer {{jwt}}
 
 ### Bookings show request
 
-GET http://localhost:3000/bookings/1.json
+GET http://localhost:3000/bookings/2.json
 Authorization: Bearer {{jwt}}
+# Authorization: Bearer {{ru_jwt}}
 
 ### Bookings create action
 

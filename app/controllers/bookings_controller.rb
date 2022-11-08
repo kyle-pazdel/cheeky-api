@@ -10,7 +10,11 @@ class BookingsController < ApplicationController
 
   # GET /bookings/1
   def show
-    render template: "bookings/show"
+    if @booking.user.id == current_user.id
+      render template: "bookings/show"
+    else
+      render json: { message: "Please log in to view booking details." }, status: :unauthorized
+    end
   end
 
   # POST /bookings
