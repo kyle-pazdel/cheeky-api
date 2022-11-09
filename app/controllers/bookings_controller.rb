@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: %i[ show update destroy ]
-  before_action :authenticate_user, only: %i[index show create update destroy]
+  before_action :authenticate_user, only: %i[index show update destroy]
 
   # GET /bookings
   def index
@@ -20,6 +20,7 @@ class BookingsController < ApplicationController
   # POST /bookings
   def create
     @booking = Booking.new(booking_params)
+    @booking.user_id = current_user.id
 
     if @booking.save
       render template: "bookings/show"
@@ -71,6 +72,6 @@ class BookingsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def booking_params
-    params.permit(:user_id, :performer_id, :address, :city, :state, :postal_code, :event_type, :start_time, :end_time, :total, :event_name)
+    params.permit(:performer_id, :address, :city, :state, :postal_code, :event_type, :start_time, :end_time, :total, :event_name)
   end
 end

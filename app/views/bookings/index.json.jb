@@ -2,6 +2,7 @@
   {
     id: booking.id,
     performer_name: booking.performer.name,
+    performer_id: booking.performer.id,
     performer_email: booking.performer.email,
     performer_rate: booking.performer.rate,
     performer_phone_number: booking.performer.phone_number,
