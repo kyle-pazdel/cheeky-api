@@ -34,7 +34,10 @@ class BookingsController < ApplicationController
       @booking.user_id = params[:user_id] || @booking.user_id
       @booking.performer_id = params[:performer_id] || @booking.performer_id
       @booking.event_name = params[:event_name] || @booking.event_name
-      @booking.location = params[:location] || @booking.location
+      @booking.address = params[:address] || @booking.address
+      @booking.city = params[:city] || @booking.city
+      @booking.state = params[:state] || @booking.state
+      @booking.postal_code = params[:postal_code] || @booking.postal_code
       @booking.event_type = params[:event_type] || @booking.event_type
       @booking.start_time = params[:start_time] || @booking.start_time
       @booking.end_time = params[:end_time] || @booking.end_time
@@ -68,6 +71,6 @@ class BookingsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def booking_params
-    params.permit(:user_id, :performer_id, :location, :event_type, :start_time, :end_time, :total, :event_name)
+    params.permit(:user_id, :performer_id, :address, :city, :state, :postal_code, :event_type, :start_time, :end_time, :total, :event_name)
   end
 end
