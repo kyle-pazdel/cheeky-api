@@ -50,3 +50,4 @@ end
 gem 'shrine', '~> 3.3'
 gem 'jb'
 gem 'jwt'
+gem 'geocoder'
