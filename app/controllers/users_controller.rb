@@ -36,6 +36,7 @@ class UsersController < ApplicationController
       @user.last_name = params[:last_name] || @user.last_name
       @user.phone_number = params[:phone_number] || @user.phone_number
       @user.email = params[:email] || @user.email
+      @user.is_admin = params[:is_admin] || @user.is_admin
       if @user.save
         render template: "users/show"
       else
@@ -61,6 +62,6 @@ class UsersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def user_params
-    params.permit(:first_name, :last_name, :phone_number, :email, :password, :password_confirmation, :image)
+    params.permit(:first_name, :last_name, :phone_number, :email, :password, :password_confirmation, :image, :is_admin)
   end
 end

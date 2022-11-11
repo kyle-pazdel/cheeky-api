@@ -13,6 +13,19 @@
     instagram_handle: performer.instagram_handle,
     twitter_handle: performer.twitter_handle,
     performance_type: performer.performance_type,
-    performer_reviews: performer.reviews.all,
+    performer_reviews: performer.reviews.map do |review|
+      {
+        comment: review.comment,
+        rating: review.rating,
+        booking_id: review.booking_id,
+        created_at: review.created_at,
+        updated_at: review.updated_at,
+        user: {
+          first_name: review.user.first_name,
+          last_name: review.user.last_name,
+          id: review.user.id,
+        },
+      }
+    end,
   }
 end
