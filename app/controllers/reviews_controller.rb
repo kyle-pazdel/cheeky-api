@@ -24,7 +24,7 @@ class ReviewsController < ApplicationController
         render json: { message: "Unauthorized." }, status: :unauthorized
       end
     else
-      render json: @review.errors, status: :unprocessable_entity
+      render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -40,7 +40,7 @@ class ReviewsController < ApplicationController
         render json: @review.errors, status: :unprocessable_entity
       end
     else
-      render json: { message: "Unauthorized." }, status: :unauthorized
+      render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
