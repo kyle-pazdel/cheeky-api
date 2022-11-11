@@ -16,4 +16,6 @@
   end_time: @booking.end_time,
   total: @booking.total,
   reviews: @booking.reviews.all,
+  latitude: @booking.latitude,
+  longitude: @booking.longitude
 }
