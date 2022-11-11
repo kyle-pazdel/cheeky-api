@@ -17,6 +17,7 @@ class ReviewsController < ApplicationController
   # POST /reviews
   def create
     @review = Review.new(review_params)
+    @review.user_id = current_user.id
     if @review.save
       if @review.booking.user.id == current_user.id
         render template: "reviews/show"

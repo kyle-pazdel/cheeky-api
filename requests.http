@@ -1,14 +1,14 @@
 
 @jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgxOTIwNzZ9.7DQF4eY1qAlO5KlKBAhPkIN9gnQScHMZGXl47yQ1VDE
 @ru_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2Njc5NTU3NDN9.JAp1q7vpn9OSX86VdUK8v46Gp-3fSZZO5olsyr3-cNY
-@michelle_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Njc5NTgwNTZ9.oEfl6peLGp27OYDA_2hmXlVA65aiHHPMlxrddR9PnxI
+@michelle_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjgyNzA2NzF9.Dq4c5kYaOV_ks8dtw4nN7cZ1VqWfaSv8vRarzXlOKUU
 
 ### Sessions create
 POST http://localhost:3000/login.json
 Content-Type: application/json
 
 {
-  "email": "kyle@test.com",
+  "email": "michelle@test.com",
   "password": "password"
 }
 
@@ -117,11 +117,11 @@ GET http://localhost:3000/reviews/1.json
 ### Reviews create action
 
 POST http://localhost:3000/reviews.json
-# Authorization: Bearer {{jwt}}
+Authorization: Bearer {{michelle_jwt}}
 Content-Type: application/json
 
 {
-  "booking_id": "1",
+  "booking_id": "35",
   "rating": "4",
   "comment": "Sweet!"
 }
