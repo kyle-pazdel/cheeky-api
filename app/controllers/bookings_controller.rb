@@ -25,7 +25,7 @@ class BookingsController < ApplicationController
     if @booking.save
       render template: "bookings/show"
     else
-      render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
+      render json: { errors: @booking.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -46,7 +46,7 @@ class BookingsController < ApplicationController
       if @booking.save
         render template: "bookings/show"
       else
-        render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
+        render json: { errors: @booking.errors.full_messages }, status: :unprocessable_entity
       end
     else
       render json: { message: "Please log in to update booking details." }, status: :unauthorized
