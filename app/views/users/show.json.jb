@@ -5,4 +5,5 @@
   phone_number: @user.phone_number,
   email: @user.email,
   image: @user.image_data,
+  is_admin: @user.is_admin,
 }
