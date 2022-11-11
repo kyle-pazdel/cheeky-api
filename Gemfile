@@ -46,7 +46,7 @@ group :development do
   # gem "spring"
   gem 'seed_dump'
 end
-
+gem 'geocoder'
 gem 'shrine', '~> 3.3'
 gem 'jb'
 gem 'jwt'

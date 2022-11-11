@@ -80,7 +80,10 @@ Content-Type: application/json
 {
   "event_name": "test event",
   "performer_id": "1",
-  "location": "2301 N Highland Ave, Los Angeles, CA 90068",
+  "address": "2301 N Highland Ave",
+  "city": "Los Angeles",
+  "state": "CA",
+  "postal_code": "90068",
   "event_type": "concert",
   "start_time": "2022-12-23T20:00:00.000Z",
   "end_time": "2022-12-24T00:00:00.000Z",
