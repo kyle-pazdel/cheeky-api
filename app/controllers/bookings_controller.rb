@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-
   before_action :set_booking, only: %i[ show update destroy ]
   before_action :authenticate_user, only: %i[index show update destroy]
 
@@ -26,7 +25,7 @@ class BookingsController < ApplicationController
     if @booking.save
       render template: "bookings/show"
     else
-      render json: @booking.errors, status: :unprocessable_entity
+      render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -47,7 +46,7 @@ class BookingsController < ApplicationController
       if @booking.save
         render template: "bookings/show"
       else
-        render json: @booking.errors, status: :unprocessable_entity
+        render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
       end
     else
       render json: { message: "Please log in to update booking details." }, status: :unauthorized
