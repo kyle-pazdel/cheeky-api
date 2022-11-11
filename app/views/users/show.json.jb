@@ -6,4 +6,9 @@
   email: @user.email,
   image: @user.image_data,
   is_admin: @user.is_admin,
+  performers: @user.performers do |performer|
+    {
+      performer: performer,
+    }
+  end,
 }
