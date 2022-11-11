@@ -12,5 +12,11 @@
   instagram_handle: @performer.instagram_handle,
   twitter_handle: @performer.twitter_handle,
   performance_type: @performer.performance_type,
-  performer_reviews: @performer.reviews,
+  performer_reviews: @performer.reviews.map do |review|
+    {
+      user: {
+        first_name: review&.user.first_name,
+      },
+    }
+  end,
 }
