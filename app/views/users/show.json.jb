@@ -1,5 +1,6 @@
 performers = @user.performers.map do |performer|
   {
+    id: performer.id,
     name: performer.name,
     phone_number: performer.phone_number,
     email: performer.email,
