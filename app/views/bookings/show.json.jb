@@ -1,5 +1,9 @@
+post = @booking.performer.posts.first
+profile_image = PostSerializer.new(post).serializable_hash[:data][:attributes]
+
 {
   id: @booking.id,
+  performer_profile_image: profile_image,
   performer_name: @booking.performer.name,
   performer_email: @booking.performer.email,
   performer_rate: @booking.performer.rate,
@@ -17,5 +21,5 @@
   total: @booking.total,
   reviews: @booking.reviews.all,
   latitude: @booking.latitude,
-  longitude: @booking.longitude
+  longitude: @booking.longitude,
 }
