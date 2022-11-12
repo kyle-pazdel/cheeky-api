@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :performers, dependent: :destroy
   has_many :reviews, through: :bookings
+  has_many :posts
 end

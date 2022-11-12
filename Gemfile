@@ -46,8 +46,8 @@ group :development do
   # gem "spring"
   gem 'seed_dump'
 end
+gem 'jb'
 gem 'geocoder'
 gem 'shrine', '~> 3.3'
-gem 'jb'
 gem 'jwt'
-gem 'active_model_serializers'
+gem "jsonapi-serializer", "~> 2.2"
