@@ -1,3 +1,23 @@
+performers = @user.performers.map do |performer|
+  {
+    name: performer.name,
+    phone_number: performer.phone_number,
+    email: performer.email,
+    shortest_gig: performer.shortest_gig,
+    longest_gig: performer.longest_gig,
+    city: performer.city,
+    state: performer.state,
+    rate: performer.rate,
+    bio: performer.bio,
+    instagram_handle: performer.instagram_handle,
+    twitter_handle: performer.twitter_handle,
+    performance_type: performer.performance_type,
+    posts: performer.posts.map do |post|
+      image_url = PostSerializer.new(post).serializable_hash[:data][:attributes]
+    end,
+  }
+end
+
 {
   id: @user.id,
   first_name: @user.first_name,
@@ -6,9 +26,10 @@
   email: @user.email,
   image: @user.image_data,
   is_admin: @user.is_admin,
-  performers: @user&.performers do |performer|
-    {
-      performer: performer,
-    }
-  end,
+  performers: performers,
+# performers: @user.performers do |performer|
+#   {
+#     performer: performer,
+#   }
+# end,
 }
