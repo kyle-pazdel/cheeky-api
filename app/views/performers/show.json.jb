@@ -1,3 +1,6 @@
+posts = @performer.posts.map do |post|
+  image_url = PostSerializer.new(post).serializable_hash[:data][:attributes]
+end
 {
   id: @performer.id,
   name: @performer.name,
@@ -9,6 +12,7 @@
   state: @performer.state,
   rate: @performer.rate,
   bio: @performer.bio,
+  posts: posts,
   instagram_handle: @performer.instagram_handle,
   twitter_handle: @performer.twitter_handle,
   performance_type: @performer.performance_type,
