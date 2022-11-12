@@ -16,7 +16,6 @@ class PerformersController < ApplicationController
   # POST /performers
   def create
     @performer = Performer.new(performer_params)
-    @performer.user_id = current_user.id
 
     if @performer.save
       render json: @performer, status: :created, location: @performer
