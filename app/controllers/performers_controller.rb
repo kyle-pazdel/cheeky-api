@@ -40,6 +40,7 @@ class PerformersController < ApplicationController
       @performer.instagram_handle = params[:instagram_handle] || @performer.instagram_handle
       @performer.twitter_handle = params[:twitter_handle] || @performer.twitter_handle
       @performer.performance_type = params[:performance_type] || @performer.performance_type
+      @performer.image = params[:image] || @performer.image
       if @performer.save
         render template: "performers/show"
       else
@@ -64,6 +65,6 @@ class PerformersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def performer_params
-    params.permit(:name, :phone_number, :email, :shortest_gig, :longest_gig, :city, :state, :rate, :bio, :intagram_handle, :twitter_handle, :performance_type, :user_id)
+    params.permit(:name, :phone_number, :email, :shortest_gig, :longest_gig, :city, :state, :rate, :bio, :intagram_handle, :twitter_handle, :performance_type, :user_id, :image)
   end
 end
