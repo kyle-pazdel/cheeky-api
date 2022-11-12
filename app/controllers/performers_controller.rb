@@ -16,6 +16,7 @@ class PerformersController < ApplicationController
   # POST /performers
   def create
     @performer = Performer.new(performer_params)
+    @performer.user_id = current_user.id
 
     if @performer.save
       render json: @performer, status: :created, location: @performer
@@ -63,8 +64,6 @@ class PerformersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def performer_params
-    def performer_params
-      params.permit(:name, :phone_number, :email, :shortest_gig, :longest_gig, :city, :state, :rate, :bio, :intagram_handle, :twitter_handle, :performance_type, :user_id)
-    end
+    params.permit(:name, :phone_number, :email, :shortest_gig, :longest_gig, :city, :state, :rate, :bio, :intagram_handle, :twitter_handle, :performance_type, :user_id)
   end
 end
