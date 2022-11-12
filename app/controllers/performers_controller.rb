@@ -20,7 +20,7 @@ class PerformersController < ApplicationController
     if @performer.save
       render json: @performer, status: :created, location: @performer
     else
-      render json: @performer.errors, status: :unprocessable_entity
+      render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
