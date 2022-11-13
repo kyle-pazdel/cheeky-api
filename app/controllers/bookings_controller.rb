@@ -21,6 +21,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user_id = current_user.id
+    @booking.paid = false
 
     if @booking.save
       render template: "bookings/show"
