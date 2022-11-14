@@ -3,7 +3,7 @@ profile_image = PostSerializer.new(post).serializable_hash[:data][:attributes]
 
 {
   id: @booking.id,
-  performer_profile_image: profile_image,
+  performer_image: profile_image,
   performer_name: @booking.performer.name,
   performer_email: @booking.performer.email,
   performer_rate: @booking.performer.rate,
@@ -22,4 +22,5 @@ profile_image = PostSerializer.new(post).serializable_hash[:data][:attributes]
   reviews: @booking.reviews.all,
   latitude: @booking.latitude,
   longitude: @booking.longitude,
+  paid: @booking.paid,
 }

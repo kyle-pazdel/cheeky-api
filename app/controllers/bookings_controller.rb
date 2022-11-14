@@ -44,6 +44,7 @@ class BookingsController < ApplicationController
       @booking.start_time = params[:start_time] || @booking.start_time
       @booking.end_time = params[:end_time] || @booking.end_time
       @booking.total = params[:total] || @booking.total
+      @booking.paid = params[:paid] || @booking.paid
       if @booking.save
         render template: "bookings/show"
       else

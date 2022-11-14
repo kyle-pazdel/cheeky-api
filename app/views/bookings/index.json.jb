@@ -19,5 +19,6 @@
     total: booking.total,
     latitude: booking.latitude,
     longitude: booking.longitude,
+    paid: booking.paid,
   }
 end
