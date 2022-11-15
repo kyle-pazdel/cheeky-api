@@ -53,6 +53,7 @@ class PerformersController < ApplicationController
   # DELETE /performers/1
   def destroy
     @performer.destroy
+    render json: { message: "Performer deleted." }
   end
 
   private

@@ -19,13 +19,9 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.user_id = current_user.id
     if @review.save
-      if @review.booking.user.id == current_user.id
-        render template: "reviews/show"
-      else
-        render json: { message: "Unauthorized." }, status: :unauthorized
-      end
+      render template: "reviews/show"
     else
-      render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
+      render json: { errors: @review.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -41,7 +37,7 @@ class ReviewsController < ApplicationController
         render json: @review.errors, status: :unprocessable_entity
       end
     else
-      render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
+      render json: { errors: @review.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
