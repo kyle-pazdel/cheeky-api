@@ -48,6 +48,5 @@ group :development do
 end
 gem 'jb'
 gem 'geocoder'
-gem 'shrine', '~> 3.3'
 gem 'jwt'
 gem "jsonapi-serializer", "~> 2.2"
