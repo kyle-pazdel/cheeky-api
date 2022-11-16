@@ -3,7 +3,11 @@
 ## Description
 
 <p>Cheeky API is a backend built to work in conjunction with the Cheeky frontend to serve data for a gig booking app for Drag Queens! This app was developed to serve queens to help them get connected with the people that need their talents.</p>
-<p>* If you're reading this and haven't checked out the front end for this web app, read through that documentation first [here](https://github.com/kyle-pazdel/cheeky-frontend) before proceeding with the backend.</p>
+
+
+### But first...
+If you're reading this and haven't checked out the front end for this web app, read through that documentation [here](https://github.com/kyle-pazdel/cheeky-frontend) before proceeding with the backend.
+
 
 ## Getting Started
 
