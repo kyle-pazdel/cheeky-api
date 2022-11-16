@@ -62,7 +62,8 @@ From there, and with your front end running, you can navigate to **http://localh
 
 ### Features
 
-• Custom JSON templates rendered for the following models via their CRUD controllers: User • Performer • Booking • Reveiw • Session • Post
+<p>• Custom JSON templates rendered for the following models via their CRUD controllers: User • Performer • Booking • Reveiw • Session • Post </p>
+<p>• Image storage using Rails' ActiveStorage, configuring via serialized JSON, and served with a localhost link directly in-browser</p>
 
 ## Author
 
