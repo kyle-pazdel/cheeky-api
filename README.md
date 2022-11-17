@@ -13,7 +13,7 @@ If you're reading this and haven't checked out the front end for this web app, r
 
 ### Dependencies
 
-Bark BnB was created with Ruby 3.1.1p18 on Rails 7.0.4. on a postgreSQL server, and makes use of the [jb gem](https://github.com/amatsuda/jb), [jwt gem](https://github.com/jwt/ruby-jwt), [geocoder gem](https://github.com/alexreisner/geocoder), and [jsonapi-serializer gem](https://github.com/jsonapi-serializer/jsonapi-serializer), as well as an Active storage migration enabling users to upload files directly to the database.
+Cheeky was created with Ruby 3.1.1p18 on Rails 7.0.4. on a postgreSQL server, and makes use of the [jb gem](https://github.com/amatsuda/jb), [jwt gem](https://github.com/jwt/ruby-jwt), [geocoder gem](https://github.com/alexreisner/geocoder), and [jsonapi-serializer gem](https://github.com/jsonapi-serializer/jsonapi-serializer), as well as an Active storage migration enabling users to upload files directly to the database.
 
 ### Installing
 
