@@ -55,8 +55,8 @@ profile_image = posts[0]
         email: booking.user.email,
         id: booking.user.id,
       },
-      created_at: review.created_at,
-      updated_at: review.updated_at,
+      created_at: booking.created_at,
+      updated_at: booking.updated_at,
     }
   end,
 }
