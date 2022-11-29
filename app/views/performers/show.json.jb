@@ -20,16 +20,43 @@ profile_image = posts[0]
   performance_type: @performer.performance_type,
   performer_reviews: @performer.reviews.map do |review|
     {
+      id: review.id,
       comment: review.comment,
       rating: review.rating,
       booking_id: review.booking_id,
-      created_at: review.created_at,
-      updated_at: review.updated_at,
       user: {
         first_name: review.user.first_name,
         last_name: review.user.last_name,
         id: review.user.id,
       },
+      created_at: review.created_at,
+      updated_at: review.updated_at,
+    }
+  end,
+  performer_bookings: @performer.bookings.map do |booking|
+    {
+      id: booking.id,
+      event_name: booking.event_name,
+      address: booking.address,
+      city: booking.city,
+      state: booking.state,
+      postal_code: booking.postal_code,
+      latitude: booking.latitude,
+      longitude: booking.longitude,
+      event_type: booking.event_type,
+      start_time: booking.start_time,
+      end_time: booking.end_time,
+      paid: booking.paid,
+      total: booking.total,
+      user: {
+        first_name: booking.user.first_name,
+        last_name: booking.user.last_name,
+        phone_number: booking.user.phone_number,
+        email: booking.user.email,
+        id: booking.user.id,
+      },
+      created_at: review.created_at,
+      updated_at: review.updated_at,
     }
   end,
 }
