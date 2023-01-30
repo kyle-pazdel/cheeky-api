@@ -50,3 +50,5 @@ gem 'jb'
 gem 'geocoder'
 gem 'jwt'
 gem "jsonapi-serializer", "~> 2.2"
+gem 'unicorn'
+
