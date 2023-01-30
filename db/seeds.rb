@@ -1,12 +1,12 @@
 User.create!([
-  { first_name: "Michelle", last_name: "Visage", phone_number: "5556655555", email: "michelle@test.com", passowrd: "password", password_confirmation: "password", image_data: nil, is_admin: false },
-  { first_name: "Ross", last_name: "Matthews", phone_number: "8885558888", email: "ross@test.com", passowrd: "password", password_confirmation: "password", image_data: nil, is_admin: false },
-  { first_name: "Kyle", last_name: "Pazdel", phone_number: "+12333333335", email: "kyle@test.com", passowrd: "password", password_confirmation: "password", image_data: nil, is_admin: true },
-  { first_name: "Test", last_name: "User", phone_number: "+12345674893", email: "email@email.com", passowrd: "password", password_confirmation: "password", image_data: nil, is_admin: false },
-  { first_name: "RuPaul", last_name: "Charles", phone_number: "+15554445555", email: "ru@test.com", passowrd: "password", password_confirmation: "password", image_data: nil, is_admin: true },
-  { first_name: "Alex", last_name: "Test", phone_number: "+15555555656", email: "alex@test.com", passowrd: "password", password_confirmation: "password", image_data: nil, is_admin: true },
-  { first_name: "Mary", last_name: "Tester", phone_number: "+15557775588", email: "mary@email.com", passowrd: "password", password_confirmation: "password", image_data: nil, is_admin: true },
-  { first_name: "Naysha", last_name: "Lopez", phone_number: "+15556667575", email: "naysha@email.com", passowrd: "password", password_confirmation: "password", image_data: nil, is_admin: false },
+  { first_name: "Michelle", last_name: "Visage", phone_number: "5556655555", email: "michelle@test.com", password: "password", password_confirmation: "password", image_data: nil, is_admin: false },
+  { first_name: "Ross", last_name: "Matthews", phone_number: "8885558888", email: "ross@test.com", password: "password", password_confirmation: "password", image_data: nil, is_admin: false },
+  { first_name: "Kyle", last_name: "Pazdel", phone_number: "+12333333335", email: "kyle@test.com", password: "password", password_confirmation: "password", image_data: nil, is_admin: true },
+  { first_name: "Test", last_name: "User", phone_number: "+12345674893", email: "email@email.com", password: "password", password_confirmation: "password", image_data: nil, is_admin: false },
+  { first_name: "RuPaul", last_name: "Charles", phone_number: "+15554445555", email: "ru@test.com", password: "password", password_confirmation: "password", image_data: nil, is_admin: true },
+  { first_name: "Alex", last_name: "Test", phone_number: "+15555555656", email: "alex@test.com", password: "password", password_confirmation: "password", image_data: nil, is_admin: true },
+  { first_name: "Mary", last_name: "Tester", phone_number: "+15557775588", email: "mary@email.com", password: "password", password_confirmation: "password", image_data: nil, is_admin: true },
+  { first_name: "Naysha", last_name: "Lopez", phone_number: "+15556667575", email: "naysha@email.com", password: "password", password_confirmation: "password", image_data: nil, is_admin: false },
 ])
 Performer.create!([
   { name: "Peppermint", phone_number: "+14445556565", email: "pep@test.com", shortest_gig: 60, longest_gig: 120, city: "New York", state: "NY", rate: 450, bio: "Peppermint, or Miss Peppermint, is an American actress, singer, songwriter, television personality, drag queen, and activist. She is best known from the nightlife scene and, in 2017, as the runner-up on the ninth season of RuPaul's Drag Race.", instagram_handle: nil, twitter_handle: "Peppermint247", performance_type: "live singer • actor • dancer", user_id: 3 },
