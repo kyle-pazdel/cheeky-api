@@ -86,4 +86,3 @@ production:
   database: cheeky_api_production
   username: cheeky_api
   password: <%= ENV["CHEEKY_API_DATABASE_PASSWORD"] %>
-  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
