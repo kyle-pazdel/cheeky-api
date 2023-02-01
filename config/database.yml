@@ -84,5 +84,6 @@ test:
 production:
   <<: *default
   database: cheeky_api_production
-  username: cheeky_api
-  password: <%= ENV["CHEEKY_API_DATABASE_PASSWORD"] %>
+  secret_key_base: <%= ENV.fetch(SECRET_KEY_BASE)%>
+  # username: cheeky_api
+  # password: <%= ENV["CHEEKY_API_DATABASE_PASSWORD"] %>
