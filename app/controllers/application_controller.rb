@@ -6,7 +6,7 @@ class ApplicationController < ActionController::API
       begin
         decoded_token = JWT.decode(
           token,
-          Rails.application.credentials.fetch(:secret_key_base),
+          Rails.application.secret_key_base,
           true,
           { algorithm: "HS256" }
         )
@@ -19,7 +19,7 @@ class ApplicationController < ActionController::API
 
   def authenticate_user
     unless current_user
-      render json: {}, status: :unauthorized
+      render json: {message: "Not signed in"}, status: :unauthorized
     end
   end
 end
