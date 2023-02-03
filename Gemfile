@@ -51,7 +51,6 @@ gem 'geocoder'
 gem 'jwt'
 gem "jsonapi-serializer", "~> 2.2"
 gem 'unicorn'
-gem 'activestorage-validator'
 
 gem 'capistrano', '~> 3.11'
 gem 'capistrano-rails', '~> 1.4'
