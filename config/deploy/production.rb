@@ -5,8 +5,8 @@
 
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
-public_ip_address = ENV['SERVER_PUBLIC_IP']
-server public_ip_address, user: "deploy", roles: %w{app db web}
+
+server "52.13.18.168", user: "deploy", roles: %w{app db web}
 
 
 
