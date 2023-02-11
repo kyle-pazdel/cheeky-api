@@ -47,7 +47,7 @@ end
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  gem 'seed_dump'
+  # gem 'seed_dump'
 end
 gem 'jb'
 gem 'geocoder'
@@ -59,5 +59,5 @@ gem 'capistrano', '~> 3.11'
 gem 'capistrano-rails', '~> 1.4'
 gem 'capistrano-passenger', '~> 0.2.0'
 gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
-gem 'capistrano-rails-collection'
-gem 'capistrano-bundler'
+# gem 'capistrano-rails-collection'
+# gem 'capistrano-bundler'
