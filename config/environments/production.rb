@@ -1,7 +1,7 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.routes.default_url_options = {
-  host: ENV["RAILS_SERVER_ROUTE"],
+  host: "https://cheeky-api.com",
 
 }
 
